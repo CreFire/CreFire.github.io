@@ -1,0 +1,129 @@
+{
+  "audioOffset": 0.0,
+  "guitarEntryRealT": 3.6,
+  "forgeHoldUntilRealT": 4.3,
+  "morphStartRealT": 3.55,
+  "morphEndRealT": 4.35,
+  "config": {
+    "width": 1320,
+    "height": 880,
+    "fps": 60,
+    "duration": 10.0,
+    "anvilTarget": {
+      "leftTapX": 586,
+      "leftTapY": 442,
+      "rightHitX": 674,
+      "rightHitY": 462,
+      "barStartX": 588,
+      "barStartY": 444,
+      "barEndX": 748,
+      "barEndY": 506
+    },
+    "leftCraftsman": {
+      "hipBase": {
+        "x": 216,
+        "y": 468
+      },
+      "footBack": {
+        "x": 136,
+        "y": 798
+      },
+      "footFront": {
+        "x": 292,
+        "y": 822
+      },
+      "shoulderHammerLocal": {
+        "x": -42,
+        "y": -168
+      },
+      "shoulderTongsLocal": {
+        "x": 48,
+        "y": -178
+      },
+      "tongsUpperLen": 128,
+      "tongsForeLen": 124,
+      "hammerUpperLen": 148,
+      "hammerForeLen": 144,
+      "hammerHandleLen": 175
+    },
+    "rightCraftsman": {
+      "hipBase": {
+        "x": 1048,
+        "y": 474
+      },
+      "footLead": {
+        "x": 934,
+        "y": 798
+      },
+      "footTrail": {
+        "x": 1144,
+        "y": 826
+      },
+      "shoulderLeadLocal": {
+        "x": -68,
+        "y": -186
+      },
+      "shoulderTrailLocal": {
+        "x": 14,
+        "y": -176
+      },
+      "armUpperLen": 142,
+      "armForeLen": 136,
+      "sledgeHandleLen": 485,
+      "sledgeImpactAngleDeg": -167.5,
+      "sledgeApexAngleDeg": -114.0
+    }
+  },
+  "strikes": [
+    {
+      "id": 1,
+      "t": 0.15,
+      "hand": "L",
+      "kind": "heavy",
+      "intensity": 1.0
+    },
+    {
+      "id": 2,
+      "t": 0.65,
+      "hand": "R",
+      "kind": "heavy",
+      "intensity": 1.0
+    },
+    {
+      "id": 3,
+      "t": 1.15,
+      "hand": "L",
+      "kind": "heavy",
+      "intensity": 1.0
+    },
+    {
+      "id": 4,
+      "t": 1.65,
+      "hand": "R",
+      "kind": "heavy",
+      "intensity": 1.0
+    },
+    {
+      "id": 5,
+      "t": 2.15,
+      "hand": "L",
+      "kind": "heavy",
+      "intensity": 1.0
+    },
+    {
+      "id": 6,
+      "t": 2.65,
+      "hand": "R",
+      "kind": "heavy",
+      "intensity": 1.0
+    },
+    {
+      "id": 7,
+      "t": 3.15,
+      "hand": "L",
+      "kind": "heavy",
+      "intensity": 1.0
+    }
+  ],
+  "barShifts": []
+}

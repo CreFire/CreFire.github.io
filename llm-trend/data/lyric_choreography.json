@@ -1,0 +1,291 @@
+{
+  "version": "1.0-llm-trend",
+  "shots": [
+    {
+      "lineIndex": 0,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "serif",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#f59e0b",
+      "hero": [
+        "感知机",
+        "第一束光"
+      ]
+    },
+    {
+      "lineIndex": 1,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "serif",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#38bdf8",
+      "hero": [
+        "反向传播"
+      ]
+    },
+    {
+      "lineIndex": 2,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "serif",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#818cf8",
+      "hero": [
+        "词向量",
+        "语义"
+      ]
+    },
+    {
+      "lineIndex": 3,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "serif",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#fbbf24",
+      "hero": [
+        "注意力"
+      ]
+    },
+    {
+      "lineIndex": 4,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "serif",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#22d3ee",
+      "hero": [
+        "算力洪流",
+        "幂律"
+      ]
+    },
+    {
+      "lineIndex": 5,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "serif",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#34d399",
+      "hero": [
+        "人类对齐",
+        "唤醒"
+      ]
+    },
+    {
+      "lineIndex": 6,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "serif",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#fb923c",
+      "hero": [
+        "开源星火",
+        "百模"
+      ]
+    },
+    {
+      "lineIndex": 7,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "serif",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#ec4899",
+      "hero": [
+        "原生多模态"
+      ]
+    },
+    {
+      "lineIndex": 8,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "serif",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#fbbf24",
+      "hero": [
+        "百万长卷",
+        "金针"
+      ]
+    },
+    {
+      "lineIndex": 9,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "serif",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#22d3ee",
+      "hero": [
+        "混合专家"
+      ]
+    },
+    {
+      "lineIndex": 10,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "sans",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#f59e0b",
+      "hero": [
+        "慢思考"
+      ]
+    },
+    {
+      "lineIndex": 11,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "sans",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#4ade80",
+      "hero": [
+        "智能体",
+        "代码"
+      ]
+    },
+    {
+      "lineIndex": 12,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "sans",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#60a5fa",
+      "hero": [
+        "万物协议",
+        "星环"
+      ]
+    },
+    {
+      "lineIndex": 13,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "sans",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#2dd4bf",
+      "hero": [
+        "多智能体",
+        "蜂群"
+      ]
+    },
+    {
+      "lineIndex": 14,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "sans",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#34d399",
+      "hero": [
+        "全双工",
+        "共振"
+      ]
+    },
+    {
+      "lineIndex": 15,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "sans",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#facc15",
+      "hero": [
+        "端侧芯片"
+      ]
+    },
+    {
+      "lineIndex": 16,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "sans",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#a3e635",
+      "hero": [
+        "生命密码",
+        "科学新章"
+      ]
+    },
+    {
+      "lineIndex": 17,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "sans",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#e879f9",
+      "hero": [
+        "世界模型"
+      ]
+    },
+    {
+      "lineIndex": 18,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 142,
+      "font": "sans",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#2dd4bf",
+      "hero": [
+        "具身",
+        "人间"
+      ]
+    },
+    {
+      "lineIndex": 19,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "sans",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#60a5fa",
+      "hero": [
+        "自我演进",
+        "通用智能"
+      ]
+    },
+    {
+      "lineIndex": 20,
+      "layout": "upper_staggered",
+      "x": 480,
+      "y": 118,
+      "font": "sans",
+      "size": 50,
+      "inkMode": "ivory_gold",
+      "accent": "#fbbf24",
+      "hero": [
+        "硅基光"
+      ]
+    }
+  ]
+}

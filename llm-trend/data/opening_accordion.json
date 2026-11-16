@@ -1,0 +1,106 @@
+{
+  "version": "4.0-silicon-tensor-forge",
+  "leftPanelWidth": 344,
+  "guitarDropRealT": 3.6,
+  "handoffStartRealT": 8.75,
+  "handoffEndRealT": 10.0,
+  "title": {
+    "line1": "大模型",
+    "line2": "演进二十幕",
+    "seal": "硅基纪元"
+  },
+  "forgeDrawers": [
+    {
+      "id": "g1_litho",
+      "num": "01",
+      "tag": "晶圆光刻",
+      "fullLabel": "极紫外晶圆光刻 · 纳米电路蚀刻"
+    },
+    {
+      "id": "g2_tensor",
+      "num": "02",
+      "tag": "矩阵熔铸",
+      "fullLabel": "量子张量熔炉 · 算力脉冲锻造"
+    },
+    {
+      "id": "g3_synapse",
+      "num": "03",
+      "tag": "突触涌现",
+      "fullLabel": "亿万参数连接 · 智能火花觉醒"
+    }
+  ],
+  "eraDrawers": [
+    {
+      "sceneId": "s01_sahara",
+      "num": "01",
+      "year": "1958",
+      "style": "ochre"
+    },
+    {
+      "sceneId": "s02_egypt",
+      "num": "02",
+      "year": "1986",
+      "style": "egypt"
+    },
+    {
+      "sceneId": "s04_tang",
+      "num": "04",
+      "year": "2017",
+      "style": "vangogh"
+    },
+    {
+      "sceneId": "s05_song",
+      "num": "05",
+      "year": "2020",
+      "style": "ukiyoe"
+    },
+    {
+      "sceneId": "s06_qingming",
+      "num": "06",
+      "year": "2022",
+      "style": "vector"
+    },
+    {
+      "sceneId": "s08_mughal",
+      "num": "08",
+      "year": "2024",
+      "style": "vaporwave"
+    },
+    {
+      "sceneId": "s10_wayang",
+      "num": "10",
+      "year": "MoE",
+      "style": "vaporwave"
+    },
+    {
+      "sceneId": "s11_ukiyoe",
+      "num": "11",
+      "year": "CoT",
+      "style": "svg"
+    },
+    {
+      "sceneId": "s12_starry",
+      "num": "12",
+      "year": "Agent",
+      "style": "vector"
+    },
+    {
+      "sceneId": "s14_nosferatu",
+      "num": "14",
+      "year": "Swarm",
+      "style": "ukiyoe"
+    },
+    {
+      "sceneId": "s18_vaporwave",
+      "num": "18",
+      "year": "World",
+      "style": "vaporwave"
+    },
+    {
+      "sceneId": "s20_code",
+      "num": "20",
+      "year": "AGI",
+      "style": "svg"
+    }
+  ]
+}

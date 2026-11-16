@@ -1,0 +1,176 @@
+{
+  "title": "硅基涌现 · 大模型演进二十幕",
+  "subtitle": "100% 纯代码实时音画长卷",
+  "width": 960,
+  "height": 720,
+  "fps": 30,
+  "duration": 146.0,
+  "intro": 10.0,
+  "outro": 16.0,
+  "credit": "CreFire",
+  "model": "silicon-emergence-v1",
+  "scenes": [
+    {
+      "id": "sahara",
+      "image": "LLM-01",
+      "name": "感知机与神经元",
+      "year": "1958",
+      "medium": "继电器",
+      "story": "穿孔纸带与黄铜继电器前，线性超平面切开正负样本"
+    },
+    {
+      "id": "egypt",
+      "image": "LLM-02",
+      "name": "反向传播与梯度谷",
+      "year": "1986",
+      "medium": "蓝图",
+      "story": "工程蓝图等高线损失曲面上，骑手顺负梯度下探极小值"
+    },
+    {
+      "id": "han",
+      "image": "LLM-03",
+      "name": "词向量语义星图",
+      "year": "2013",
+      "medium": "流形",
+      "story": "高维深空中平行四边形向量法则闪耀，词汇星群自动聚类"
+    },
+    {
+      "id": "tang",
+      "image": "LLM-04",
+      "name": "注意力机制诞生",
+      "year": "2017",
+      "medium": "注意力",
+      "story": "金色多头注意力光弧横跨穹顶，权重光束实时聚焦骑手"
+    },
+    {
+      "id": "song",
+      "image": "LLM-05",
+      "name": "Scaling Law 算力洪流",
+      "year": "2020",
+      "medium": "超算",
+      "story": "万卡液冷机柜如巨碑耸立，幂律斜坡上算力骑手疾驰向前"
+    },
+    {
+      "id": "qingming",
+      "image": "LLM-06",
+      "name": "对话觉醒与人类对齐",
+      "year": "2022",
+      "medium": "对齐",
+      "story": "骑手跃上流式吐字的数据虹桥，光标与人类反馈点亮灯火"
+    },
+    {
+      "id": "maya",
+      "image": "LLM-07",
+      "name": "开源生态百模星火",
+      "year": "2023",
+      "medium": "星火",
+      "story": "开源分支树绽放漫天孔明灯，轻量化LoRA模块精准嵌入"
+    },
+    {
+      "id": "mughal",
+      "image": "LLM-08",
+      "name": "原生多模态融合",
+      "year": "2024",
+      "medium": "棱镜",
+      "story": "像素、声波与词元汇入晶体棱镜，折射出统一表征光谱"
+    },
+    {
+      "id": "bada",
+      "image": "LLM-09",
+      "name": "百万长上下文记忆海",
+      "year": "2024",
+      "medium": "沧海",
+      "story": "浩瀚百万Token波涛间，骑手探照灯一束锁定深海金针"
+    },
+    {
+      "id": "wayang",
+      "image": "LLM-10",
+      "name": "MoE 混合专家路由",
+      "year": "2024",
+      "medium": "路由",
+      "story": "门控路由器按节拍分流脉冲，十六座专家塔点亮最优两座"
+    },
+    {
+      "id": "ukiyoe",
+      "image": "LLM-11",
+      "name": "慢思考与深度推理",
+      "year": "2025",
+      "medium": "推理",
+      "story": "分形思维搜索树剪枝回溯，最优推理主干瞬间镀金贯通"
+    },
+    {
+      "id": "starry",
+      "image": "LLM-12",
+      "name": "自主编程智能体",
+      "year": "2025",
+      "medium": "终端",
+      "story": "多终端代码流与语法树实时铺桥，单元测试全绿徽章亮起"
+    },
+    {
+      "id": "scream",
+      "image": "LLM-13",
+      "name": "万物互联工具协议",
+      "year": "2025",
+      "medium": "总线",
+      "story": "标准接口坞站对接数据库与云端工具，指令脉冲一触即达"
+    },
+    {
+      "id": "nosferatu",
+      "image": "LLM-14",
+      "name": "多智能体蜂群协作",
+      "year": "2025",
+      "medium": "蜂群",
+      "story": "规划、研究、编码与验证多智能体伴飞，共享黑板同频共振"
+    },
+    {
+      "id": "scope",
+      "image": "LLM-15",
+      "name": "全双工实时情感交互",
+      "year": "2026",
+      "medium": "声纹",
+      "story": "双向声纹环交融成李萨如谐波光影，下一拍凝回灵动骑手"
+    },
+    {
+      "id": "pixel",
+      "image": "LLM-16",
+      "name": "端侧智能与随身算力",
+      "year": "2026",
+      "medium": "晶圆",
+      "story": "微缩晶圆街区轻跃低功耗脉冲，随身芯片弹出离线加速徽章"
+    },
+    {
+      "id": "chat",
+      "image": "LLM-17",
+      "name": "AI4Science 科学新范式",
+      "year": "2026+",
+      "medium": "科研",
+      "story": "蛋白质折叠彩带、超导晶格与聚变等离子环同步解锁"
+    },
+    {
+      "id": "vapor",
+      "image": "LLM-18",
+      "name": "交互式物理世界模型",
+      "year": "2026+",
+      "medium": "沙盘",
+      "story": "神经场实时推演三维重力与流体光影，所经之处万物生成"
+    },
+    {
+      "id": "shorts",
+      "image": "LLM-19",
+      "name": "具身智能走入现实",
+      "year": "2027+",
+      "medium": "具身",
+      "story": "第一视角竖屏三维语义感知街景，人形机器人挥手致意"
+    },
+    {
+      "id": "code",
+      "image": "LLM-20",
+      "name": "自我演进与通用智能黎明",
+      "year": "AGI 纪元",
+      "medium": "涌现",
+      "story": "傅里叶本轮与自演化纯代码勾勒硅基骑手，开启通用星门"
+    }
+  ],
+  "outro_story": "二十幅硅基演进答卷挂满展墙，第二十一席空椅静候下一代涌现智能入座。",
+  "audioMode": "pure-code-realtime-worklet"
+}

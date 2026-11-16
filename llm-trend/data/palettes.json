@@ -1,0 +1,68 @@
+{
+  "intro": {
+    "accent": "#38bdf8"
+  },
+  "outro": {
+    "accent": "#fbbf24"
+  },
+  "sahara": {
+    "accent": "#f59e0b"
+  },
+  "egypt": {
+    "accent": "#38bdf8"
+  },
+  "han": {
+    "accent": "#818cf8"
+  },
+  "tang": {
+    "accent": "#fbbf24"
+  },
+  "song": {
+    "accent": "#22d3ee"
+  },
+  "qingming": {
+    "accent": "#34d399"
+  },
+  "maya": {
+    "accent": "#fb923c"
+  },
+  "mughal": {
+    "accent": "#ec4899"
+  },
+  "bada": {
+    "accent": "#fbbf24"
+  },
+  "wayang": {
+    "accent": "#22d3ee"
+  },
+  "ukiyoe": {
+    "accent": "#f59e0b"
+  },
+  "starry": {
+    "accent": "#4ade80"
+  },
+  "scream": {
+    "accent": "#60a5fa"
+  },
+  "nosferatu": {
+    "accent": "#2dd4bf"
+  },
+  "scope": {
+    "accent": "#34d399"
+  },
+  "pixel": {
+    "accent": "#facc15"
+  },
+  "chat": {
+    "accent": "#a3e635"
+  },
+  "vapor": {
+    "accent": "#e879f9"
+  },
+  "shorts": {
+    "accent": "#2dd4bf"
+  },
+  "code": {
+    "accent": "#60a5fa"
+  }
+}

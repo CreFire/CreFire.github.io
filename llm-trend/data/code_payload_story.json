@@ -1,0 +1,13 @@
+{
+  "version": "2.0-silicon-emergence-pure-code",
+  "sourceProject": "llm-trend-pure-code.html",
+  "exactBytes": 662434,
+  "sizeMB": 0.66,
+  "revealStartRealT": 140.4,
+  "finale": {
+    "fileName": "大模型演进二十幕_纯代码单文件版.html",
+    "bytesLabel": "662,434 bytes",
+    "caption": "全片纯代码实时生成，零图片/零音频采样，WebAudio + Canvas 4K。",
+    "credit": "CreFire · Silicon Emergence Edition"
+  }
+}

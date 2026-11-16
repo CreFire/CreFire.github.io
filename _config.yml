@@ -110,7 +110,11 @@ exclude: [
   'pelican-6000-pure-code/README.md',
   'pelican-6000-pure-code/server.py',
   'pelican-6000-pure-code/tools/',
-  'pelican-6000-pure-code/启动纯代码全片.command'
+  'pelican-6000-pure-code/启动纯代码全片.command',
+  'llm-trend/README.md',
+  'llm-trend/server.py',
+  'llm-trend/tools/',
+  'llm-trend/启动纯代码全片.command'
 ]
 
 # Theme
