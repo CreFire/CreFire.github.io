@@ -106,7 +106,11 @@ exclude: [
   'Gemfile',
   'Gemfile.lock',
   'gulpfile.js',
-  'README.md'
+  'README.md',
+  'pelican-6000-pure-code/README.md',
+  'pelican-6000-pure-code/server.py',
+  'pelican-6000-pure-code/tools/',
+  'pelican-6000-pure-code/启动纯代码全片.command'
 ]
 
 # Theme
