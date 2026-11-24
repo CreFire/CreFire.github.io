@@ -1,122 +1,65 @@
 # Site Settings
-name: Jekflix
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by
-  Thiago Rossener.
-tags:
-  - blog
-  - template
-  - jekyll
-  - theme
-  - netlify
-show_hero: true
+title: "CreFire"
+tagline: "代码、独立游戏与视听实验记录"
+description: "CreFire 的个人博客，记录软件工程、独立游戏开发、AI 工具实践与纯代码视听实验。"
+author: "CreFire"
+github_username: "CreFire"
+language: "zh-CN"
+
+url: "https://crefire.github.io"
+baseurl: ""
+
+# Navigation
 menu:
-  - title: Home
-    url: /
-  - title: About
-    url: /about
-  - title: Contact
-    url: /contact
-  - title: Feed
-    url: /feed.xml
-email: youremail@test.com
-# See: https://disqus.com/
-disqus_username: disqus_username
-# Contact Form Setting
-# See: https://formspree.io/
-formspree_form_id: formspree_form_id
+  - title: "文章"
+    url: "/"
+  - title: "作品"
+    url: "/works/"
+  - title: "标签"
+    url: "/tags/"
+  - title: "关于"
+    url: "/about/"
 
+# Interactive / Pure-Code Works hosted on this site
+works:
+  - title: "硅基涌现 · 大模型演进二十幕"
+    url: "/llm-trend/"
+    year: "2026"
+    summary: "零外部图片、音频与字体的实时音画长卷，串联从感知机到智能体涌现的 20 幕演进。"
+    meta: "WebAudio · Canvas/SVG · 02:26"
+  - title: "鹈鹕六千年的车"
+    url: "/pelican-6000-pure-code/"
+    year: "2026"
+    summary: "纯代码驱动的交互式艺术史视听全片，实时合成器乐与 20 个艺术时代动态笔触。"
+    meta: "Pure Code · AudioWorklet · 02:55"
 
-# Social Media Settings
-# Remove the item if you don't need it
-github_username: github_username
-facebook_username: facebook_username
-twitter_username: twitter_username
-instagram_username: instagram_username
-linkedin_username: linkedin_username
-medium_username: medium_username
-
-
-# Posts Settings
-show_time_bar: true
-show_modal_on_exit: false
-show_modal_on_finish_post: true
-two_columns_layout: true
-
-
-# Advanced Settings
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
-google_analytics: "UA-XXXXXXXX-X"
-language: "en"
-categories_folder: category
-sent_message_url: "/contact/message-sent/"
-
-
-# Build settings
+# Build Settings (GitHub Pages compatible)
 markdown: kramdown
 highlighter: rouge
 permalink: /:title/
-collections:
-  authors:
-    output: true
-paginate_path: "/page/:num/"
-show_get_theme_btn: true
-use_logo: false
+timezone: Asia/Shanghai
 
-# Content paginator
-paginate_content:
-  enabled: true
-  debug: false
-  collections:
-    - posts
-  auto: false
-  separator: "--page-break--"
-  permalink: "/:num/"
-  seo_canonical: true
-  properties:
-    part:
-      is_generated: true
-    last:
-      is_generated: true
-    single:
-      is_generated: true
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
 
-# SASS
-sass:
-  style: compressed
+plugins: []
 
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-paginate-content
-
-# Exclude my node related stuff
-exclude: [
-  'cms-auth/',
-  'docs/',
-  'vendor/',
-  'LICENSE',
-  'CHANGELOG.md',
-  'jekflix.gemspec',
-  'package.json',
-  'package-lock.json',
-  'src',
-  'node_modules',
-  'initpost.sh',
-  'Gemfile',
-  'Gemfile.lock',
-  'gulpfile.js',
-  'README.md',
-  'pelican-6000-pure-code/README.md',
-  'pelican-6000-pure-code/server.py',
-  'pelican-6000-pure-code/tools/',
-  'pelican-6000-pure-code/启动纯代码全片.command',
-  'llm-trend/README.md',
-  'llm-trend/server.py',
-  'llm-trend/tools/',
-  'llm-trend/启动纯代码全片.command'
-]
-
-# Theme
-version: v3.1.2
+exclude:
+  - cms-auth/
+  - docs/
+  - vendor/
+  - node_modules/
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - pelican-6000-pure-code/README.md
+  - pelican-6000-pure-code/server.py
+  - pelican-6000-pure-code/tools/
+  - pelican-6000-pure-code/启动纯代码全片.command
+  - llm-trend/README.md
+  - llm-trend/server.py
+  - llm-trend/tools/
+  - llm-trend/启动纯代码全片.command

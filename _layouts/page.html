@@ -2,10 +2,17 @@
 layout: default
 ---
 
-<div class="post">
+<article class="page">
+  {% if page.title %}
+    <header class="page__header">
+      <h1 class="page__title">{{ page.title }}</h1>
+      {% if page.description and page.description != "" and page.description != page.title %}
+        <p class="page__desc">{{ page.description }}</p>
+      {% endif %}
+    </header>
+  {% endif %}
 
-  <article class="post-content fullwidth">
+  <div class="prose">
     {{ content }}
-  </article>
-
-</div>
+  </div>
+</article>

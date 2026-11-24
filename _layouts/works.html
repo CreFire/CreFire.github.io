@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<section class="page">
+  <header class="page__header">
+    <h1 class="page__title">{{ page.title | default: "作品" }}</h1>
+    <p class="page__desc">{{ page.description | default: "纯代码驱动的交互式音画实验与独立项目。" }}</p>
+  </header>
+
+  {% if site.works and site.works.size > 0 %}
+    <ul class="works-ledger works-ledger--standalone">
+      {% for work in site.works %}
+        <li class="works-ledger__item">
+          <a class="works-ledger__link" href="{{ work.url | relative_url }}" target="_blank" rel="noopener">
+            <div class="works-ledger__info">
+              <span class="works-ledger__title">{{ work.title }}</span>
+              <span class="works-ledger__summary">{{ work.summary }}</span>
+            </div>
+            <span class="works-ledger__meta">{{ work.meta }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% assign extra = content | strip %}
+  {% if extra != "" %}
+    <div class="prose">
+      {{ content }}
+    </div>
+  {% endif %}
+</section>

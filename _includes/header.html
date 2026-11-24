@@ -1,27 +1,46 @@
-<header class="bar-header">
-    <a id="menu" role="button">
-        <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-brand" href="{{ '/' | relative_url }}">
+      <span class="site-brand__mark" aria-hidden="true"></span>
+      <span class="site-brand__name">{{ site.title }}</span>
     </a>
-    <h1 class="logo">
-        <a href="{{ site.baseurl }}/">
-            {% if site.use_logo %}
-                {% include logo.html %}
-            {% else %}
-                {{ site.name }} <span class="version">{{ site.version }}</span>
-            {% endif %}
-        </a>
-    </h1>
-    <a id="search" class="dosearch" role="button">
-        <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
-    </a>
-    {% if site.show_get_theme_btn %}
-        <a href="https://github.com/thiagorossener/jekflix-template" class="get-theme" role="button">
-            Get this theme!
-        </a>
-    {% endif %}
+
+    <nav class="site-nav" aria-label="主导航">
+      {% assign built_in_urls = "/|/works/|/tags/|/about/" | split: "|" %}
+      {% for item in site.menu %}
+        {% assign is_active = false %}
+        {% if item.url == '/' and page.url == '/' %}
+          {% assign is_active = true %}
+        {% elsif item.url != '/' and page.url contains item.url %}
+          {% assign is_active = true %}
+        {% endif %}
+        <a class="site-nav__link{% if is_active %} is-active{% endif %}" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      {% endfor %}
+
+      {% for p in site.pages %}
+        {% if p.menu == true and p.title %}
+          {% unless built_in_urls contains p.url %}
+            <a class="site-nav__link{% if page.url == p.url %} is-active{% endif %}" href="{{ p.url | relative_url }}">{{ p.title }}</a>
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+
+      <button type="button" class="site-icon-btn" id="search-open" aria-label="搜索文章 (快捷键 /)" title="搜索 (快捷键 /)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="20" y1="20" x2="16.2" y2="16.2"></line>
+        </svg>
+      </button>
+
+      <button type="button" class="site-icon-btn" id="theme-toggle" aria-label="切换明暗主题" title="切换明暗主题">
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"></path>
+        </svg>
+      </button>
+    </nav>
+  </div>
 </header>
-
-<div id="mask" class="overlay"></div>
-
-{% include menu.html %}
-{% include search.html %}

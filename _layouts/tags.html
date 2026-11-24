@@ -1,38 +1,49 @@
 ---
-layout: minimal
+layout: default
 ---
 
-{% assign date_format = site.date_format | default: "%m/%d/%Y" %}
+<section class="page">
+  <header class="page__header">
+    <h1 class="page__title">标签</h1>
+    <p class="page__desc">按主题索引全部文章。</p>
+  </header>
 
-<div class="tags">
-  {% assign tags_list = site.tags %}
-    {% if tags_list.first[0] == null %}
-      {% for tag in tags_list %}
-          <a href="#{{ tag | slugify }}">#{{ tag }}</a>
+  {% if site.tags and site.tags.size > 0 %}
+    <div class="tags-cloud" aria-label="全部标签">
+      {% for tag in site.tags %}
+        {% assign tag_name = tag[0] %}
+        {% assign tag_posts = tag[1] %}
+        <a class="tag-pill" href="#tag-{{ tag_name | slugify }}">
+          <span>#{{ tag_name }}</span>
+          <span class="tag-pill__count">{{ tag_posts | size }}</span>
+        </a>
       {% endfor %}
-    {% else %}
-      {% for tag in tags_list %}
-          <a href="#{{ tag[0] | slugify }}">#{{ tag[0] }}</a>
-      {% endfor %}
-    {% endif %}
-  {% assign tags_list = nil %}
-</div>
+    </div>
 
-{% for tag in site.tags  %}
-  <a class="post-anchor" id="{{ tag[0] | slugify }}"></a>
-  <div class="tag-title">
-    <span>#{{ tag[0] }}</span>
-  </div>
-  <ul class="post-list">
-      {% assign pages_list = tag[1] %}
-      {% for post in pages_list reversed %}
-          {% if post.title != null and post.is_generated != true %}
-            {% if group == null or group == post.group %}
-              <li><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time></a></li>
-            {% endif %}
-          {% endif %}
+    <div class="tags-groups">
+      {% for tag in site.tags %}
+        {% assign tag_name = tag[0] %}
+        {% assign tag_posts = tag[1] %}
+        <section class="tags-group" id="tag-{{ tag_name | slugify }}">
+          <h2 class="tags-group__title">#{{ tag_name }}</h2>
+          <ul class="ledger__list">
+            {% for post in tag_posts %}
+              <li class="ledger__item">
+                <a class="ledger__link" href="{{ post.url | relative_url }}">
+                  <time class="ledger__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+                  <span class="ledger__main">
+                    <span class="ledger__title">{{ post.title }}</span>
+                  </span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
       {% endfor %}
-      {% assign pages_list = nil %}
-      {% assign group = nil %}
-  </ul>
-{% endfor %}
+    </div>
+  {% else %}
+    <div class="empty-state">
+      <p>当前文章尚未添加标签。在发布文章时填写 <code>tags</code> 后会自动在此归类。</p>
+    </div>
+  {% endif %}
+</section>
