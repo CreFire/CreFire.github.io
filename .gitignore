@@ -6,3 +6,6 @@ package-json.lock
 _site
 node_modules
 _drafts
+cms-auth/.dev.vars*
+cms-auth/.env*
+cms-auth/.wrangler/

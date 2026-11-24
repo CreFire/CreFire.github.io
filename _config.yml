@@ -93,6 +93,7 @@ plugins:
 
 # Exclude my node related stuff
 exclude: [
+  'cms-auth/',
   'docs/',
   'vendor/',
   'LICENSE',

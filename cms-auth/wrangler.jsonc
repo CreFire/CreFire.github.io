@@ -1,0 +1,11 @@
+{
+  "name": "crefire-pages-auth",
+  "main": "index.mjs",
+  "compatibility_date": "2026-11-24",
+  "workers_dev": true,
+  "preview_urls": false,
+  "vars": {
+    "AUTH_ORIGIN": "https://crefire-pages-auth.astroblog.workers.dev"
+  },
+  "observability": { "enabled": false }
+}

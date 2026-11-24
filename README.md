@@ -32,9 +32,35 @@ A theme for Jekyll inspired by Netflix panel for who loves movies and series and
 - [Paginated posts](docs/features.md#paginated-posts) *(optional)*
 - ["Before you go" modal](docs/features.md#before-you-go-modal) *(optional)*
 - [Post recommendation](docs/features.md#post-recommendation)
-- [Netlify CMS ready](docs/features.md#netlify-cms-ready)
+- [Content Manager with GitHub sign-in](#content-manager)
 - [Translations](docs/setup.md#translations) **new!**
 - [Math Expressions](docs/features.md#math-expressions) *(optional)* **new!**
+
+## Content Manager
+
+Open [the writing dashboard](https://crefire.github.io/admin/) and sign in
+with a GitHub account that has write access to this repository. Use **Posts**
+to add or edit articles. Drafts use the editor's workflow, and publishing
+merges the content into the GitHub Pages branch `main`.
+
+### Configure GitHub login
+
+1. Register a private [GitHub App](https://github.com/settings/apps/new) with
+   the dashboard as its homepage and
+   `https://crefire-pages-auth.astroblog.workers.dev/auth/callback` as its callback.
+   Disable webhooks. Set repository permissions to **Contents** and **Pull
+   requests** read/write. Keep **Metadata** at read-only.
+2. Install the app on `CreFire/CreFire.github.io` only.
+3. Deploy the login Worker and enter the app credentials as Worker secrets.
+
+   ```powershell
+   npx wrangler deploy --config cms-auth/wrangler.jsonc
+   npx wrangler secret put GITHUB_CLIENT_ID --config cms-auth/wrangler.jsonc
+   npx wrangler secret put GITHUB_CLIENT_SECRET --config cms-auth/wrangler.jsonc
+   ```
+
+4. Verify `/auth/status` on the Worker returns `{"configured":true}` before
+   pushing the CMS configuration to `main`.
 
 ## SEO
 
