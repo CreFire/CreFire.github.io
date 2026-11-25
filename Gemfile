@@ -1,13 +1,6 @@
-source "https://mirrors.tuna.tsinghua.edu.cn/rubygems"
+source "https://rubygems.org"
 
-gem "kramdown"
+gem "jekyll", "~> 4.3"
 gem "kramdown-parser-gfm"
 gem "rouge"
-gem "jekyll"
-gem "jekyll-paginate"
-gem "jekyll-paginate-content"
-gem "json"
-gem 'csv'
-gem 'base64'
-gem 'bigdecimal'
-gem 'webrick'
+gem "webrick"

@@ -1,88 +1,29 @@
-<footer>
-    <p>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <span class="site-footer__copy">© {{ site.time | date: "%Y" }} {{ site.title }}</span>
+    <div class="site-footer__links">
       {% if site.github_username %}
-        <a href="https://github.com/{{ site.github_username }}" title="Github">
-          <svg><use xlink:href="#icon-github"></use></svg>
-        </a>
+        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>
       {% endif %}
-      {% if site.facebook_username %}
-        <a href="https://www.facebook.com/{{ site.facebook_username }}" title="Facebook">
-          <svg><use xlink:href="#icon-facebook"></use></svg>
-        </a>
-      {% endif %}
-      {% if site.twitter_username %}
-        <a href="https://twitter.com/{{ site.twitter_username }}" title="Twitter">
-          <svg><use xlink:href="#icon-twitter"></use></svg>
-        </a>
-      {% endif %}
-      {% if site.medium_username %}
-        <a href="https://medium.com/@{{ site.medium_username }}" title="Medium">
-          <svg><use xlink:href="#icon-medium"></use></svg>
-        </a>
-      {% endif %}
-      {% if site.instagram_username %}
-        <a href="https://www.instagram.com/{{ site.instagram_username }}" title="Instagram">
-          <svg><use xlink:href="#icon-instagram"></use></svg>
-        </a>
-      {% endif %}
-      {% if site.linkedin_username %}
-        <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn">
-          <svg><use xlink:href="#icon-linkedin"></use></svg>
-        </a>
-      {% endif %}
-    </p>
-
-    {% include links.html %}
-
-    <p>
-      <span>Jekflix</span> was made with <svg class="love"><use xlink:href="#icon-heart"></use></svg> by <a href="https://rossener.com" target="_blank" class="creator">Thiago Rossener</a>
-    </p>
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <a href="{{ '/admin/' | relative_url }}">写作</a>
+    </div>
+  </div>
 </footer>
 
-{% assign social_urls = '' %}
-{% if site.github_username %}
-    {% assign social_urls = social_urls | append: '"https://github.com/' | append: site.github_username | append: '",' %}
-{% endif %}
-{% if site.facebook_username %}
-    {% assign social_urls = social_urls | append: '"https://www.facebook.com/' | append: site.facebook_username | append: '",' %}
-{% endif %}
-{% if site.twitter_username %}
-    {% assign social_urls = social_urls | append: '"https://twitter.com/' | append: site.twitter_username | append: '",' %}
-{% endif %}
-{% if site.medium_username %}
-    {% assign social_urls = social_urls | append: '"https://medium.com/@' | append: site.medium_username | append: '",' %}
-{% endif %}
-{% if site.instagram_username %}
-    {% assign social_urls = social_urls | append: '"https://www.instagram.com/' | append: site.instagram_username | append: '",' %}
-{% endif %}
-{% if site.linkedin_username %}
-    {% assign social_urls = social_urls | append: '"https://www.linkedin.com/in/' | append: site.linkedin_username | append: '",' %}
-{% endif %}
+<div class="search-dialog" id="search-dialog" hidden role="dialog" aria-modal="true" aria-label="站内搜索">
+  <div class="search-dialog__backdrop" data-search-close></div>
+  <div class="search-dialog__panel">
+    <div class="search-dialog__input-row">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="20" y1="20" x2="16.2" y2="16.2"></line>
+      </svg>
+      <input type="search" id="search-input" class="search-dialog__input" placeholder="搜索文章标题、标签或正文关键词…" autocomplete="off" spellcheck="false">
+      <button type="button" class="search-dialog__esc" data-search-close>Esc</button>
+    </div>
+    <ul class="search-dialog__results" id="search-results" role="listbox"></ul>
+  </div>
+</div>
 
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "name": "{{ site.name }}",
-  "description": "{{ site.description }}",
-  "url": "{{ site.url }}{{site.baseurl}}/",
-  "logo": {
-      "@type": "ImageObject",
-      "url": "{{ site.url }}{{site.baseurl}}/assets/img/icons/mediumtile.png",
-      "width": "600",
-      "height": "315"
-  },
-  "sameAs": [
-    {{ social_urls | split: "," | join: "," }}
-  ]
-}
-</script>
-
-<!-- Include the website scripts -->
-<script src="{{ '/assets/js/scripts.min.js' | prepend: site.baseurl }}"></script>
-
-<!-- Include Google Analytics script -->
-{% include stats.html %}
-
-<!-- Include extra scripts -->
-{% include extra-js.html %}
+<script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>

@@ -1,3 +1,47 @@
 ---
-layout: search
+layout: null
 ---
+[
+{% assign items_emitted = false %}
+{% for post in site.posts %}
+  {% if items_emitted %},{% endif %}
+  {
+    "title": {{ post.title | jsonify }},
+    "url": {{ post.url | relative_url | jsonify }},
+    "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+    "tags": {{ post.tags | join: ", " | default: "" | jsonify }},
+    "category": {{ post.category | default: "" | jsonify }},
+    "excerpt": {{ post.description | default: post.content | strip_html | normalize_whitespace | truncate: 140 | jsonify }}
+  }
+  {% assign items_emitted = true %}
+{% endfor %}
+{% assign built_in_urls = "/|/works/|/tags/|/about/|/404.html" | split: "|" %}
+{% for p in site.pages %}
+  {% if p.title and p.menu == true %}
+    {% unless built_in_urls contains p.url %}
+      {% if items_emitted %},{% endif %}
+      {
+        "title": {{ p.title | jsonify }},
+        "url": {{ p.url | relative_url | jsonify }},
+        "date": {{ p.date | date: "%Y-%m-%d" | default: "页面" | jsonify }},
+        "tags": {{ p.tags | join: ", " | default: "" | jsonify }},
+        "category": "页面",
+        "excerpt": {{ p.description | default: p.content | strip_html | normalize_whitespace | truncate: 140 | jsonify }}
+      }
+      {% assign items_emitted = true %}
+    {% endunless %}
+  {% endif %}
+{% endfor %}
+{% for work in site.works %}
+  {% if items_emitted %},{% endif %}
+  {
+    "title": {{ work.title | jsonify }},
+    "url": {{ work.url | relative_url | jsonify }},
+    "date": {{ work.year | default: "作品" | jsonify }},
+    "tags": "交互作品, Pure Code",
+    "category": "作品",
+    "excerpt": {{ work.summary | jsonify }}
+  }
+  {% assign items_emitted = true %}
+{% endfor %}
+]

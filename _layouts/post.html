@@ -1,165 +1,73 @@
-<!DOCTYPE html>
-<html lang="{{ site.language }}" class="no-js">
-    {% include head.html %}
-    <body class="has-push-menu">
-        {% include minutes-to-read.html %}
-        {% include svg-icons.html %}
-        {% include header.html %}
+---
+layout: default
+---
 
-        <section class="post {% if site.two_columns_layout %}two-columns{% else %}one-column{% endif %}">
-            <article role="article" class="post-content">
-                <p class="post-info">
-                    {% if page.date %}
-                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
-                        <time class="date" datetime="{{ page.date | date_to_xmlschema }}">
-                            {% include date.html date=page.date %}
-                        </time>
-                    {% endif %}
-                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>{{ minutesText }}</span>
-                </p>
-                <h1 class="post-title">{{ page.title }}</h1>
-                <p class="post-subtitle">{{ page.subtitle }}</p>
+{% assign plain_chars = content | strip_html | strip_newlines | remove: " " | size %}
+{% assign read_mins = plain_chars | divided_by: 380 %}
+{% if read_mins < 1 %}
+  {% assign read_mins = 1 %}
+{% endif %}
 
-                {% if page.image and paginator.activated == nil %}
-                    <img src="{{ page.image }}" alt="Featured image" class="post-cover">
-                {% endif %}
+<article class="post">
+  <header class="post__header">
+    <div class="post__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      {% if plain_chars > 0 %}
+        <span class="post__meta-sep" aria-hidden="true">/</span>
+        <span>约 {{ read_mins }} 分钟阅读</span>
+      {% endif %}
+      {% if page.category and page.category != "" %}
+        <span class="post__meta-sep" aria-hidden="true">/</span>
+        <span>{{ page.category }}</span>
+      {% endif %}
+    </div>
 
-                {% include pagination-post.html progressBar=true %}
+    <h1 class="post__title">{{ page.title }}</h1>
 
-                {% include toc.html %}
+    {% if page.subtitle and page.subtitle != "" %}
+      <p class="post__subtitle">{{ page.subtitle }}</p>
+    {% elsif page.description and page.description != "" %}
+      <p class="post__subtitle">{{ page.description }}</p>
+    {% endif %}
 
-                {{ content }}
+    {% if page.tags and page.tags.size > 0 %}
+      <div class="post__tags" aria-label="文章标签">
+        {% for tag in page.tags %}
+          <a class="tag-pill" href="{{ '/tags/' | relative_url }}#tag-{{ tag | slugify }}">#{{ tag }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
 
-                {% include pagination-post.html %}
-            </article>
+  <nav class="post__toc" id="post-toc" hidden aria-label="文章目录">
+    <details open>
+      <summary class="post__toc-title">目录</summary>
+      <ol class="post__toc-list" id="post-toc-list"></ol>
+    </details>
+  </nav>
 
-            {% if site.two_columns_layout %}
-                <aside class="see-also">
-                    <h2>{{ site.translations.text.see_also | default: "See also" }}</h2>
-                    <ul>
-                        {% assign next_posts = site.posts | where_exp:"post","post.is_generated != true" | where_exp:"post","post.path != page.path" %}
-                        {% assign shuffled_array = next_posts | shuffle %}
-                        {% for post in shuffled_array limit:3 %}
-                            <li>
-                                <a href="{{ post.url | prepend: site.baseurl }}">
-                                    {% if post.optimized_image %}
-                                        <img src="{{ post.optimized_image }}">
-                                    {% elsif post.image %}
-                                        <img src="{{ post.image }}">
-                                    {% else %}
-                                        <img src="/assets/img/off.jpg">
-                                    {% endif %}
-                                    <h3>{{ post.title }}</h3>
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </aside>
-            {% endif %}
+  <div class="prose" id="post-content">
+    {% if plain_chars > 0 %}
+      {{ content }}
+    {% else %}
+      <p class="prose__empty">这篇笔记暂无正文内容。</p>
+    {% endif %}
+  </div>
 
-        </section>
-
-        <!-- Add time bar only for pages without pagination -->
-        {% if paginator.activated == nil and site.show_time_bar == true %}
-            {% include time-bar.html %}
-            {% include recommendation.html %}
+  {% if page.previous or page.next %}
+    <nav class="post-pager" aria-label="上下篇导航">
+      <div class="post-pager__cell">
+        {% if page.previous %}
+          <span class="post-pager__label">上一篇</span>
+          <a class="post-pager__link" href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>
         {% endif %}
-
-        <!-- Show modal if the post is the last one -->
-        {% if paginator.is_last and site.show_modal_on_finish_post %}
-            {% include modal.html title="You made it!" subtitle="Why don't you try another?" %}
+      </div>
+      <div class="post-pager__cell post-pager__cell--next">
+        {% if page.next %}
+          <span class="post-pager__label">下一篇</span>
+          <a class="post-pager__link" href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a>
         {% endif %}
-
-        <!-- Show modal before user leaves the page -->
-        {% if site.show_modal_on_exit %}
-            {% include modal.html title="Don't go yet!" subtitle="You may also like..." closed=true showOnExit=true %}
-        {% endif %}
-
-        {% include subscription.html %}
-        {% include share.html %}
-        {% include author.html %}
-        {% include comments.html %}
-        {% include footer.html %}
-
-        {% assign author = site.authors | where: "name", post.author | first %}
-
-        {% assign author_urls = '' %}
-        {% if author.github_username %}
-            {% assign author_urls = author_urls | append: '"https://github.com/' | append: author.github_username | append: '",' %}
-        {% endif %}
-        {% if author.facebook_username %}
-            {% assign author_urls = author_urls | append: '"https://www.facebook.com/' | append: author.facebook_username | append: '",' %}
-        {% endif %}
-        {% if author.twitter_username %}
-            {% assign author_urls = author_urls | append: '"https://twitter.com/' | append: author.twitter_username | append: '",' %}
-        {% endif %}
-        {% if author.medium_username %}
-            {% assign author_urls = author_urls | append: '"https://medium.com/@' | append: author.medium_username | append: '",' %}
-        {% endif %}
-        {% if author.instagram_username %}
-            {% assign author_urls = author_urls | append: '"https://www.instagram.com/' | append: author.instagram_username | append: '",' %}
-        {% endif %}
-        {% if author.linkedin_username %}
-            {% assign author_urls = author_urls | append: '"https://www.linkedin.com/in/' | append: author.linkedin_username | append: '",' %}
-        {% endif %}
-        {% if page.math %}
-        <script>
-            MathJax = {
-                tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-                }
-            };
-        </script>
-        <script type="text/javascript" id="MathJax-script" async
-            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-        </script>
-        {% endif %}
-        <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "BlogPosting",
-            "name": "{{ page.title }}",
-            "headline": "{{ page.subtitle }}",
-            "description": "{{ page.description }}",
-            "image": "{{ page.image }}",
-            "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
-            "articleBody": "{{ content | strip_html | xml_escape | textilize }}",
-            "wordcount": "{{ content | number_of_words }}",
-            "inLanguage": "{{ site.language }}",
-            "dateCreated": "{{ page.date | date: '%Y-%m-%d/' }}",
-            "datePublished": "{{ page.date | date: '%Y-%m-%d/' }}",
-            "dateModified": "{{ page.date | date: '%Y-%m-%d/' }}",
-            "author": {
-                "@type": "Person",
-                "name": "{{ author.display_name }}",
-                {% if author.photo %}
-                "image": "{{ author.photo }}",
-                {% else %}
-                "image": {{ "/assets/img/user.jpg" | prepend: site.baseurl | prepend: site.url }},
-                {% endif %}
-                "jobTitle": "{{ author.position }}",
-                "url": "{{ author.url | prepend: site.baseurl | prepend: site.url }}",
-                "sameAs": [
-                    {{ author_urls | split: "," | join: "," }}
-                ]
-            },
-            "publisher": {
-                "@type": "Organization",
-                "name": "{{ site.name }}",
-                "url": "{{ site.url }}{{site.baseurl}}/",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "{{ site.url }}{{site.baseurl}}/assets/img/blog-image.png",
-                    "width": "600",
-                    "height": "315"
-                }
-            },
-            "mainEntityOfPage": "True",
-            "genre": "{{ page.category }}",
-            "articleSection": "{{ page.category }}",
-            "keywords": [{{ page.tags | join: '","' | append: '"' | prepend: '"' }}]
-        }
-        </script>
-    </body>
-</html>
+      </div>
+    </nav>
+  {% endif %}
+</article>
