@@ -25,7 +25,7 @@ layout: default
                   <time class="ledger__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%m-%d" }}</time>
                   <span class="ledger__main">
                     <span class="ledger__title">{{ post.title }}</span>
-                    {% if post.description and post.description != "" %}
+                    {% if post.description and post.description != "" and post.description != post.title %}
                       <span class="ledger__desc">{{ post.description }}</span>
                     {% endif %}
                   </span>
