@@ -26,7 +26,7 @@ layout: default
 
     {% if page.subtitle and page.subtitle != "" %}
       <p class="post__subtitle">{{ page.subtitle }}</p>
-    {% elsif page.description and page.description != "" %}
+    {% elsif page.description and page.description != "" and page.description != page.title %}
       <p class="post__subtitle">{{ page.description }}</p>
     {% endif %}
 

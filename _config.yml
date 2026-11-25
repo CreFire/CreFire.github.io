@@ -37,7 +37,6 @@ works:
 markdown: kramdown
 highlighter: rouge
 permalink: /:title/
-timezone: Asia/Shanghai
 
 kramdown:
   input: GFM
