@@ -18,7 +18,7 @@ tags:
 
 要是google one拉不起套餐页，试试下载google浏览器，通过google浏览器的订阅ai跳转到google one拉起看看
 
-1. `g1.ios.30tb.ai.pro.m g1.ai.ultra.3months_ip_90p.acq` 需要完整粘贴
+1. `g1\.ios\.30tb\.ai\.pro\.m g1.ai.ultra.3months_ip_90p.acq` 需要完整粘贴
 2. `http-response`（不是默认的，需要手动改）
 3. 证书需要首先安装 然后设置首页处理一下 再去信任证书（总共三步）
 4. 首页需要从 配置 改成 代理
